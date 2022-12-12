@@ -1,0 +1,29 @@
+
+body{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: lightsalmon;
+    color:black;
+    /* font-size: 1rem;
+	margin: 2rem; */
+    min-height: 100vh;
+}
+
+.fileUploader{
+    background-color: white;
+    padding:30px;
+    border:20px;
+    width:430px;
+    border-radius: 5px;
+
+    
+}
+
+.fileUploader h4{
+    text-align: center;
+    font-size: larger;
+}
+
+
+
