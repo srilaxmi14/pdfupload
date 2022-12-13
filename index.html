@@ -7,16 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="fileUploader">
         <h4>File Uploader</h4>
         <form id="selectFile">
-            <input type="file" id="fileInput" required/>
-            <input type="submit" id="button">
+            <input type="file" id="fileInput" accept=".pdf" required/>
+            <input type="submit" id="button" onclick="mypdf()">
         </form>
-    </div>
-    <script src="script.js"></script>
+    </div>    
 </body>
 </html>
