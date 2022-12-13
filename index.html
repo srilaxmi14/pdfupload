@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -17,8 +14,16 @@
         <h4>File Uploader</h4>
         <form id="selectFile">
             <input type="file" id="fileInput" accept=".pdf" required/>
-            <input type="submit" id="button" onclick="mypdf()">
+            <input type="submit" id="button" onclick="openPdf()">
         </form>
-    </div>    
+    </div>
+
+    <!-- <embed src="" type="application/pdf" >   -->
+    <iframe id="myframe" src=""></iframe>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

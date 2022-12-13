@@ -1,49 +1,32 @@
-// document.querySelector("#fileupload").addEventListener('change',e=>{
-//     var file = e.target.files[0];
-// 	if (file.type != '.pdf') {
-// 		console.error('It is not a pdf file.');
-// 		return;
-// 	}
-// })
+
+$('form').submit(function (e) {
+    e.preventDefault();
+    value = $("#fileInput").val();
+    //     if (value== ".pdf") {
+    //         SetPage(value);
+    //     }
+    //     else if(value!=".pdf"){
+    //         alert("please chose a pdf file");
+    //     }
+    // window.open(value,"_blank");
+    e.target.reset();
+    console.log(value);
+    console.log("button is clicked");
+});
 
 
-// var form=document.querySelector("#selectFile");
-// var fileInput=document.querySelector("#fileInput");
-
-// // form.addEventListenerp("submit",()=>{
-
-// // })
-
-// form.addEventListener("submit",e=>{
-//     var file=e.target.files[0];
-//     if(file.type!='.pdf')
-//     {
-//         console.log("It is not a pdf file.");
-//         return;
-//     }
-// })
-// fileInput.onchange=e=>{
-//     console.log(e); 
+// function SetPage(value)
+// {
+// console.log(value);
+// document.getElementById("myframe").setAttribute("src", value);
 // }
 
 
-console.log($);
-
-// $('#button').click(function(){
-//     console.log("button is clicked");
-//     if(file.type!=".pdf")
-//     {
-//         console.log("not pdf");
-//         alert("it is not a pdf ");
-//     }
-// })
+function openPdf(value)
+{
+var myFrame = document.getElementById("myframe");
+myFrame.src = value;
+}
 
 
-function mypdf() {
-  $('form').submit(function (e) {
-    e.preventDefault();
-    // $('input[type="file"]');
-    window.open(mypdf,"_blank");
-    this.submit();
-  });
-};
+
