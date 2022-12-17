@@ -3,7 +3,7 @@ body{
     display:flex;
     align-items:center;
     justify-content: center;
-    background-color: lightsalmon;
+    background-color: #f6b26b;
     color:black;
     /* font-size: 1rem;
 	margin: 2rem; */
@@ -13,11 +13,9 @@ body{
 .fileUploader{
     background-color: white;
     padding:30px;
-    border:20px;
+    border:00px;
     width:430px;
-    border-radius: 5px;
-
-    
+    border-radius: 5px; 
 }
 
 .fileUploader h4{
@@ -25,5 +23,34 @@ body{
     font-size: larger;
 }
 
+#a{
+    display:flex;
+    background-color: white;
+    margin:30px;
+    border:20px;
+    width:430px;
+    border-radius: 5px;
+}
 
+#button{
+    background-color: gray; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 
+}
+
+input[type="file"]::file-selector-button {
+    background-color: gray; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

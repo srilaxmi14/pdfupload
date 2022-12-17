@@ -1,44 +1,52 @@
-$(document).ready(function(){
-  $('form').submit(function (e) {
+
+  $('#button').click(function (e) {
+
     e.preventDefault();
-    var pathvalue = $("#fileInput").val();
-    console.log(pathvalue);
-    var ext = pathvalue.substring(pathvalue.lastIndexOf('.') + 1);
-    let value=pathvalue.split('\\').pop().split('/').pop();
-    console.log(value);
-    if(ext == "pdf" )
+    $(this).val("view another");
+    var target=$("#fileInput").get(0);
+    console.log(target);
+    if(!target.files.length)
     {
-    openPdf(value);
-    } 
-    else
-    {
-    alert("Upload pdf files only");
-    return false;
+      return;
     }
-   console.log(value);
-   e.target.reset();
-   console.log("button is clicked");
+    file=target.files[0];
+    console.log("main",file);
+    if(file.type!=="application/pdf")
+    {
+      alert("Allow pdf files only");
+      return;
+    }
+  const objectURL=window.URL.createObjectURL(file);
+  $("#a").html(`<iframe src="${objectURL}" style="height:500px;width:600px;" title="Iframe Example"></iframe>`);
+
 });
 
-function openPdf(value)
-{
-console.log(value);
-$("#a").html(`<iframe id="myframe" src="/dummy/${value}.pdf" style="height:200px;width:300px;" title="Iframe Example"></iframe>`);
-console.log(value);
-var myFrame = document.getElementById("myframe");
-myFrame.src = value
-}
 
-$('#button').click(function(){
-  $(this).val("view another")
-})
-});  
+// function openPdf(value)
+// {
+//   e.preventDefault();
+//   var target=$("#fileInput").get(0);
+//   if(!target.files.length)
+//   {
+//     return;
+//   }
+//   file=target.files[0];
+//   console.log("main",file);
+//   if(file.type!=="application/pdf")
+//   {
+//     alert("pdf file");
+//     return;
+//   }
+//   const objecturl=window.URL.createObjectURL(file);
+// console.log(value);
+// $("#a").html(`<iframe src="${objecturl}" style="height:200px;width:300px;" title="Iframe Example"></iframe>`);
+// console.log(value);
+// }
 
-
-
-
-
-
+// $('#button').click(function(){
+//   $(this).val("view another")
+// })
+// });  
 
 // function openPdf(value)
 // {
