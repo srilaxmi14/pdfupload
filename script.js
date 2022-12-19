@@ -1,26 +1,67 @@
 
-  $('#button').click(function (e) {
+$('#button').click(function (e) {
+  
+  e.preventDefault();
+  $(this).val("view another");
+  var target=$("#fileInput").get(0);
+  console.log(target);
+  if(!target.files.length)
+  {
+    return;
+  }
+  file=target.files[0];
+  console.log("main",file);
+ 
 
-    e.preventDefault();
-    $(this).val("view another");
-    var target=$("#fileInput").get(0);
-    console.log(target);
-    if(!target.files.length)
-    {
-      return;
-    }
-    file=target.files[0];
-    console.log("main",file);
-    if(file.type!=="application/pdf")
-    {
-      alert("Allow pdf files only");
-      return;
-    }
-  const objectURL=window.URL.createObjectURL(file);
-  $("#a").html(`<iframe src="${objectURL}" style="height:500px;width:600px;" title="Iframe Example"></iframe>`);
+  if(file.type!=="application/pdf")
+  {
+    alert("Allow pdf files only");
+    return;
+  }
+
+  var reader=new FileReader();
+  var results;
+  // reading as a text
+  let data= reader.readAsText(file);
+  console.log(reader);
+  console.log(file);
+  reader.onload=function()
+  {
+      //console.log(data);
+      results=reader.result;
+      console.log("results",results);
+     
+      var data = getBase64(results);
+      console.log(data);
+      
+      $("#pdfRender").html(`<iframe id="myFrame" src="${data}" style="height:500px;width:600px;" title="Iframe Example"></iframe>`);
+      //alert(results);
+      
+  
+  }
 
 });
+//   $('#button').click(function (e) {
 
+//     e.preventDefault();
+//     $(this).val("view another");
+//     var target=$("#fileInput").get(0);
+//     console.log(target);
+//     if(!target.files.length)
+//     {
+//       return;
+//     }
+//     file=target.files[0];
+//     console.log("main",file);
+//     if(file.type!=="application/pdf")
+//     {
+//       alert("Allow pdf files only");
+//       return;
+//     }
+//   const result=window.URL.createObjectURL(file);
+//   $("#pdfRender").html(`<iframe src="${result}" style="height:500px;width:600px;" title="Iframe Example"></iframe>`);
+
+// });
 
 // function openPdf(value)
 // {
