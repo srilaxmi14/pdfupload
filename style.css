@@ -1,47 +1,51 @@
-
-body{
-    display:flex;
-    align-items:center;
+body {
+    display: flex;
+    align-items: center;
     justify-content: center;
     background-color: #f6b26b;
-    color:black;
-    /* font-size: 1rem;
-	margin: 2rem; */
+    color: black;
     min-height: 100vh;
     overflow: hidden;
 }
 
-.fileUploader{
+.fileUploader {
     background-color: white;
-    padding:30px;
-    border:00px;
-    width:430px;
-    border-radius: 5px; 
+    padding: 30px;
+    border: 00px;
+    width: 430px;
+    border-radius: 5px;
 }
 
-.fileUploader h4{
+.fileUploader h4 {
     text-align: center;
     font-size: larger;
 }
 
-#pdfRender{
-    display:flex;
-    background-color: white;
-    /* margin:30px;
-    border:20px;
-    width:430px;
-    border-radius: 5px; */
+#pdfRender {
+    width: 50%;
+    float: left;
+    width: 100%;
+    height: 100%;
+
 }
 
-.split .right{
-        width: 100%;
-        height: 100%;
-        /* display: inline-block; */
+iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.split,.right {
+    width: 50%;
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
 }
 
 
-#button{
-    background-color: gray; 
+#button {
+    background-color: gray;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -53,7 +57,7 @@ body{
 }
 
 input[type="file"]::file-selector-button {
-    background-color: gray; 
+    background-color: gray;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -61,38 +65,44 @@ input[type="file"]::file-selector-button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
+}
 
-  .split {
+.split {
     height: 100%;
     width: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  /* Control the left side */
-  .left {
+}
+
+/* Control the left side */
+.left {
     left: 0;
-   
-  }
-  
-  /* Control the right side */
-  .right {
-    right: 0;
-  }
-  
-  /* If you want the content centered horizontally and vertically */
-  .centered {
+    overflow: hidden;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-  }
-  
-#fileList{
-    
+}
+
+.fileList {
+    position: absolute;
+    top: 80%;
+    right: 30%;
+    background-color: white;
+    padding: 30px;
+    border: 00px;
+    width: 430px;
+    border-radius: 5px;
+}
+
+.fileList h4{
+    text-align: center;
+    font-size: larger;
 }
