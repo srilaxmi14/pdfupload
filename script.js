@@ -1,5 +1,6 @@
 
 $('#button').click(function (e) {
+  $( ".fileDisplay" ).css( "visibility", "visible" );
   e.preventDefault();
   $(this).val("view another");
   var target = $("#fileInput").get(0);
@@ -36,6 +37,9 @@ $('#fileInput').on('change', function(){
   $('#list').append('<li>'+savingValue+'</li>');
 });
 
+function buttonClicked() {
 
-
+  $(".fileList").show();
+  
+  }
 
