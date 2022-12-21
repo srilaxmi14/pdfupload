@@ -1,6 +1,5 @@
 
 $('#button').click(function (e) {
-
   e.preventDefault();
   $(this).val("view another");
   var target = $("#fileInput").get(0);
