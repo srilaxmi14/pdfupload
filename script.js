@@ -11,11 +11,6 @@ $('#button').click(function (e) {
   }
   file = target.files[0];
   console.log("main", file);
-  console.log("list", file.name);
-  // var fileName=$(this).prevAll('fileInput').val().
-  var fileName = $(this).prevAll("input[type=file]").val();
-  console.log("list of file:", fileName);
-
 
   if (file.type !== "application/pdf") {
     alert("Allow pdf files only");
@@ -24,23 +19,22 @@ $('#button').click(function (e) {
 
   var reader = new FileReader();
   var results;
-  // reading as a text
   reader.readAsDataURL(file);
   console.log(reader);
   console.log(file);
   reader.onload = function () {
     results = reader.result;
     console.log("results", results);
-    $("#pdfRender").html(`<iframe id="myFrame" src="${results}"  title="Iframe Example"></iframe>`);
+    $("#pdfRender").html(`<iframe id="myFrame" src="${results}" frameBorder="0"  title="Iframe Example"></iframe>`);
   }
+});
 
-  // $('#selectFile').submit(function(e){
-  //   var val = $(this).find('#fileInput').val();
-  //   $('ul.list').append('<li>' + val + '</li>');
-  //   console.log(val);
-  //   e.preventDefault();
-  // });
 
+$('#fileInput').on('change', function(){
+  
+  var savingValue=$(this).val().split('\\').pop().split('/').pop();
+  console.log("saved value"+savingValue);
+  $('#list').append('<li>'+savingValue+'</li>');
 });
 
 

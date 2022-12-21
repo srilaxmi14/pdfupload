@@ -32,7 +32,8 @@ body {
 iframe {
     width: 100%;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
+    
 }
 
 .split,.right {
@@ -93,8 +94,8 @@ input[type="file"]::file-selector-button {
 
 .fileList {
     position: absolute;
-    top: 80%;
-    right: 30%;
+    top: 64%;
+    right: 17%;
     background-color: white;
     padding: 30px;
     border: 00px;
