@@ -1,8 +1,7 @@
 
 $('#button').click(function (e) {
-  $( ".fileDisplay" ).css( "visibility", "visible" );
   e.preventDefault();
-  $(this).val("view another");
+
   var target = $("#fileInput").get(0);
   console.log(target);
 
@@ -30,16 +29,20 @@ $('#button').click(function (e) {
 });
 
 
-$('#fileInput').on('change', function(){
-  
-  var savingValue=$(this).val().split('\\').pop().split('/').pop();
-  console.log("saved value"+savingValue);
-  $('#list').append('<li>'+savingValue+'</li>');
+$('#fileInput').on('change', function () {
+
+  var savingValue = $(this).val().split('\\').pop().split('/').pop();
+  console.log("saved value" + savingValue);
+  $('#list').append('<li>' + savingValue + '</li>');
 });
 
 function buttonClicked() {
 
   $(".fileList").show();
-  
-  }
 
+}
+
+$('#fileInput').change(function (e) {
+  var filename = this.files[0].name;
+  $('.fileNameSpan').text(filename);
+});
