@@ -46,3 +46,8 @@ $('#fileInput').change(function (e) {
   var filename = this.files[0].name;
   $('.fileNameSpan').text(filename);
 });
+
+$("#button").click
+if ($('#fileInput').get(0).files.length === 0) {
+  console.log("No files selected.");
+}
